@@ -1,20 +1,18 @@
 number_of_students = int(input("Input number of students : "))
-student_id_list = []
-student_name_list = []
-student_dob_list = []
+students_list = []
 
 
 def input_students(total):
     for i in range(total):
         print("Input id of student number", i+1, ": ")
         id = input()
-        student_id_list.append(id)
         print("Input name of student number", i+1, ": ")
         name = input()
-        student_name_list.append(name)
         print("Input dob of student number", i+1, ": ")
         dob = input()
-        student_dob_list.append(dob)
+
+        student_dict = {"id": id, "name": name, "dob": dob}
+        students_list.append(student_dict)
 
 
 input_students(number_of_students)
@@ -22,13 +20,12 @@ input_students(number_of_students)
 
 def list_students(total):
     for i in range(total):
-        print("Id of student number", i + 1, ":", student_id_list[i])
-        print("Name of student number", i + 1, ":", student_name_list[i])
-        print("Dob of student number", i + 1, ":", student_dob_list[i])
+        print("Id of student number", i + 1, ":", students_list[i]["id"])
+        print("Name of student number", i + 1, ":", students_list[i]["name"])
+        print("Dob of student number", i + 1, ":", students_list[i]["dob"])
 
 
 list_students(number_of_students)
-
 
 number_of_courses = int(input("Input number of courses : "))
 course_name_list = []
