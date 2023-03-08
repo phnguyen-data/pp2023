@@ -1,7 +1,3 @@
-number_of_students = int(input("Input number of students : "))
-students_list = []
-
-
 def input_students(total):
     for i in range(total):
         print("Input id of student number", i+1, ": ")
@@ -15,21 +11,11 @@ def input_students(total):
         students_list.append(student_dict)
 
 
-input_students(number_of_students)
-
-
 def list_students(total):
     for i in range(total):
         print("Id of student number", i + 1, ":", students_list[i]["id"])
         print("Name of student number", i + 1, ":", students_list[i]["name"])
         print("Dob of student number", i + 1, ":", students_list[i]["dob"])
-
-
-list_students(number_of_students)
-
-number_of_courses = int(input("Input number of courses : "))
-course_name_list = []
-course_id_list = []
 
 
 def input_courses(total):
@@ -42,22 +28,10 @@ def input_courses(total):
         course_id_list.append(course)
 
 
-input_courses(number_of_courses)
-
-
 def list_courses(total):
     for i in range(total):
         print("Id of course number", i + 1, ":", course_id_list[i])
         print("Name of course number", i + 1, ":", course_name_list[i])
-
-
-list_courses(number_of_courses)
-
-
-ids = input("Input the id of the course you want add marks: ")
-
-
-marks = []
 
 
 def input_marks(total, m):
@@ -67,12 +41,21 @@ def input_marks(total, m):
         marks.append(mark)
 
 
-input_marks(number_of_students, ids)
-
-
 def list_marks(total, m):
     for i in range(total):
         print("Mark of student number", i+1, "in the course", m, ":", marks[i])
 
 
+number_of_students = int(input("Input number of students : "))
+students_list = []
+input_students(number_of_students)
+list_students(number_of_students)
+number_of_courses = int(input("Input number of courses : "))
+course_name_list = []
+course_id_list = []
+input_courses(number_of_courses)
+list_courses(number_of_courses)
+ids = input("Input the id of the course you want add marks: ")
+marks = []
+input_marks(number_of_students, ids)
 list_marks(number_of_students, ids)
